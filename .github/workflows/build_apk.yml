@@ -3,8 +3,6 @@ name: Build Miru AI APK
 on:
   push:
     branches: [ main, master ]
-  pull_request:
-    branches: [ main, master ]
   workflow_dispatch:
 
 jobs:
@@ -22,9 +20,6 @@ jobs:
           distribution: 'temurin'
           cache: gradle
 
-      - name: Setup Gradle Wrapper
-        run: gradle wrapper --gradle-version 8.0 --distribution-type bin
-
       - name: Grant execute permission for gradlew
         run: chmod +x gradlew
 
@@ -39,19 +34,15 @@ jobs:
           retention-days: 30
 
       - name: Create GitHub Release with APK
-        if: github.event_name == 'push'
         uses: softprops/action-gh-release@v2
         with:
           tag_name: build-${{ github.run_number }}
           name: "Miru AI - Build ${{ github.run_number }}"
           body: |
-            ✅ Automatic APK build from commit ${{ github.sha }}
-            ## How to install:
+            ✅ APK ready to download and install!
             1. Download app-debug.apk below
-            2. On your Android phone, go to Settings → Security → Enable Install unknown apps
-            3. Open the downloaded APK and install it
+            2. Enable Install unknown apps in Samsung Settings > Security
+            3. Open the APK and install
           files: app/build/outputs/apk/debug/app-debug.apk
-          draft: false
-          prerelease: false
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
