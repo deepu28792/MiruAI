@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Miru AI</string>
+    <string name="app_tagline">Transform Your Vision Into Motion</string>
+
+    <!-- Navigation -->
+    <string name="nav_home">Home</string>
+    <string name="nav_text_to_video">Text to Video</string>
+    <string name="nav_image_to_video">Image to Video</string>
+
+    <!-- Home Screen -->
+    <string name="home_greeting">Hello, Creator!</string>
+    <string name="home_subtitle">What would you like to create today?</string>
+    <string name="card_text_to_video">Text to Video</string>
+    <string name="card_text_to_video_desc">Describe your vision and watch it come to life</string>
+    <string name="card_image_to_video">Image to Video</string>
+    <string name="card_image_to_video_desc">Animate any image with AI magic</string>
+    <string name="recent_creations">Recent Creations</string>
+    <string name="no_recent">No creations yet. Start creating!</string>
+
+    <!-- Text to Video -->
+    <string name="ttv_title">Text to Video</string>
+    <string name="ttv_hint">Describe your video in detail…\n\nExample: A golden sunset over the ocean with waves crashing gently on the shore</string>
+    <string name="ttv_duration_label">Duration</string>
+    <string name="ttv_style_label">Style</string>
+    <string name="ttv_generate">Generate Video</string>
+    <string name="ttv_char_count">0 / 1000</string>
+
+    <!-- Image to Video -->
+    <string name="itv_title">Image to Video</string>
+    <string name="itv_upload_title">Upload Image</string>
+    <string name="itv_upload_desc">Tap to select an image from your gallery</string>
+    <string name="itv_motion_label">Motion Strength</string>
+    <string name="itv_prompt_hint">Describe the motion (optional)…</string>
+    <string name="itv_generate">Animate Image</string>
+
+    <!-- Generation -->
+    <string name="generating_title">Creating Your Video</string>
+    <string name="generating_desc">Our AI is crafting your masterpiece…</string>
+    <string name="generation_complete">Video Ready!</string>
+    <string name="generation_failed">Generation Failed</string>
+    <string name="retry">Retry</string>
+
+    <!-- Preview -->
+    <string name="preview_title">Video Preview</string>
+    <string name="btn_save">Save Video</string>
+    <string name="btn_share">Share</string>
+    <string name="btn_regenerate">Regenerate</string>
+    <string name="saving_video">Saving video…</string>
+    <string name="video_saved">Video saved to gallery!</string>
+    <string name="save_failed">Failed to save video</string>
+
+    <!-- Settings -->
+    <string name="settings_title">Settings</string>
+    <string name="api_key_label">Stability AI API Key</string>
+    <string name="api_key_hint">Enter your API key</string>
+    <string name="api_key_save">Save Key</string>
+    <string name="api_key_saved">API key saved!</string>
+
+    <!-- Errors -->
+    <string name="error_no_internet">No internet connection</string>
+    <string name="error_api_key_missing">Please add your API key in Settings</string>
+    <string name="error_empty_prompt">Please enter a description</string>
+    <string name="error_no_image">Please select an image</string>
+    <string name="error_generic">Something went wrong. Please try again.</string>
+
+    <!-- Styles -->
+    <string-array name="video_styles">
+        <item>Cinematic</item>
+        <item>Anime</item>
+        <item>Realistic</item>
+        <item>Abstract</item>
+        <item>3D Render</item>
+        <item>Watercolor</item>
+    </string-array>
+
+    <!-- Durations -->
+    <string-array name="video_durations">
+        <item>3 seconds</item>
+        <item>5 seconds</item>
+        <item>7 seconds</item>
+    </string-array>
+</resources>

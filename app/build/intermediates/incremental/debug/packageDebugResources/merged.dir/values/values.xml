@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="video_durations">
+        <item>3 seconds</item>
+        <item>5 seconds</item>
+        <item>7 seconds</item>
+    </string-array>
+    <string-array name="video_styles">
+        <item>Cinematic</item>
+        <item>Anime</item>
+        <item>Realistic</item>
+        <item>Abstract</item>
+        <item>3D Render</item>
+        <item>Watercolor</item>
+    </string-array>
+    <color name="accent_cyan">#00D4FF</color>
+    <color name="accent_orange">#FF7A35</color>
+    <color name="accent_pink">#FF4F9A</color>
+    <color name="accent_yellow">#FFD93D</color>
+    <color name="bg_card">#1A1733</color>
+    <color name="bg_dark">#0D0B1E</color>
+    <color name="bg_input">#2A2650</color>
+    <color name="bg_surface">#231F45</color>
+    <color name="divider">#2E2A55</color>
+    <color name="error">#FF5252</color>
+    <color name="gradient_end">#00D4FF</color>
+    <color name="gradient_mid">#FF4F9A</color>
+    <color name="gradient_start">#6C3DE8</color>
+    <color name="overlay">#80000000</color>
+    <color name="primary">#6C3DE8</color>
+    <color name="primary_dark">#4A1FB8</color>
+    <color name="primary_light">#9B6FF5</color>
+    <color name="success">#4CAF50</color>
+    <color name="text_hint">#6B6490</color>
+    <color name="text_primary">#FFFFFF</color>
+    <color name="text_secondary">#B8B0D8</color>
+    <color name="transparent">#00000000</color>
+    <color name="warning">#FFC107</color>
+    <color name="white">#FFFFFF</color>
+    <string name="api_key_hint">Enter your API key</string>
+    <string name="api_key_label">Stability AI API Key</string>
+    <string name="api_key_save">Save Key</string>
+    <string name="api_key_saved">API key saved!</string>
+    <string name="app_name">Miru AI</string>
+    <string name="app_tagline">Transform Your Vision Into Motion</string>
+    <string name="btn_regenerate">Regenerate</string>
+    <string name="btn_save">Save Video</string>
+    <string name="btn_share">Share</string>
+    <string name="card_image_to_video">Image to Video</string>
+    <string name="card_image_to_video_desc">Animate any image with AI magic</string>
+    <string name="card_text_to_video">Text to Video</string>
+    <string name="card_text_to_video_desc">Describe your vision and watch it come to life</string>
+    <string name="error_api_key_missing">Please add your API key in Settings</string>
+    <string name="error_empty_prompt">Please enter a description</string>
+    <string name="error_generic">Something went wrong. Please try again.</string>
+    <string name="error_no_image">Please select an image</string>
+    <string name="error_no_internet">No internet connection</string>
+    <string name="generating_desc">Our AI is crafting your masterpiece…</string>
+    <string name="generating_title">Creating Your Video</string>
+    <string name="generation_complete">Video Ready!</string>
+    <string name="generation_failed">Generation Failed</string>
+    <string name="home_greeting">Hello, Creator!</string>
+    <string name="home_subtitle">What would you like to create today?</string>
+    <string name="itv_generate">Animate Image</string>
+    <string name="itv_motion_label">Motion Strength</string>
+    <string name="itv_prompt_hint">Describe the motion (optional)…</string>
+    <string name="itv_title">Image to Video</string>
+    <string name="itv_upload_desc">Tap to select an image from your gallery</string>
+    <string name="itv_upload_title">Upload Image</string>
+    <string name="nav_home">Home</string>
+    <string name="nav_image_to_video">Image to Video</string>
+    <string name="nav_text_to_video">Text to Video</string>
+    <string name="no_recent">No creations yet. Start creating!</string>
+    <string name="preview_title">Video Preview</string>
+    <string name="recent_creations">Recent Creations</string>
+    <string name="retry">Retry</string>
+    <string name="save_failed">Failed to save video</string>
+    <string name="saving_video">Saving video…</string>
+    <string name="settings_title">Settings</string>
+    <string name="ttv_char_count">0 / 1000</string>
+    <string name="ttv_duration_label">Duration</string>
+    <string name="ttv_generate">Generate Video</string>
+    <string name="ttv_hint">Describe your video in detail…\n\nExample: A golden sunset over the ocean with waves crashing gently on the shore</string>
+    <string name="ttv_style_label">Style</string>
+    <string name="ttv_title">Text to Video</string>
+    <string name="video_saved">Video saved to gallery!</string>
+    <style name="MiruBottomNav" parent="Widget.MaterialComponents.BottomNavigationView">
+        <item name="android:background">@color/bg_card</item>
+        <item name="itemIconTint">@color/bottom_nav_color</item>
+        <item name="itemTextColor">@color/bottom_nav_color</item>
+        <item name="elevation">16dp</item>
+    </style>
+    <style name="MiruButton.Primary" parent="Widget.MaterialComponents.Button">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:paddingTop">14dp</item>
+        <item name="android:paddingBottom">14dp</item>
+        <item name="cornerRadius">16dp</item>
+        <item name="backgroundTint">@color/primary</item>
+        <item name="elevation">0dp</item>
+    </style>
+    <style name="MiruCard" parent="Widget.MaterialComponents.CardView">
+        <item name="cardBackgroundColor">@color/bg_card</item>
+        <item name="cardCornerRadius">20dp</item>
+        <item name="cardElevation">0dp</item>
+        <item name="strokeColor">@color/divider</item>
+        <item name="strokeWidth">1dp</item>
+    </style>
+    <style name="MiruTextInput" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="boxBackgroundColor">@color/bg_input</item>
+        <item name="boxStrokeColor">@color/divider</item>
+        <item name="hintTextColor">@color/text_hint</item>
+        <item name="android:textColorHint">@color/text_hint</item>
+        <item name="boxCornerRadiusTopStart">12dp</item>
+        <item name="boxCornerRadiusTopEnd">12dp</item>
+        <item name="boxCornerRadiusBottomStart">12dp</item>
+        <item name="boxCornerRadiusBottomEnd">12dp</item>
+    </style>
+    <style name="TextAppearance.Miru.Subtitle" parent="TextAppearance.MaterialComponents.Body1">
+        <item name="android:textColor">@color/text_secondary</item>
+    </style>
+    <style name="TextAppearance.Miru.Title" parent="TextAppearance.MaterialComponents.Headline5">
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    <style name="Theme.MiruAI" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryVariant">@color/primary_dark</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorSecondary">@color/accent_pink</item>
+        <item name="colorOnSecondary">@color/white</item>
+        <item name="android:colorBackground">@color/bg_dark</item>
+        <item name="colorSurface">@color/bg_card</item>
+        <item name="colorOnSurface">@color/text_primary</item>
+        <item name="android:statusBarColor">@color/bg_dark</item>
+        <item name="android:navigationBarColor">@color/bg_dark</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:fontFamily">sans-serif</item>
+    </style>
+    <style name="Theme.MiruAI.Splash" parent="Theme.MiruAI">
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowBackground">@color/bg_dark</item>
+    </style>
+</resources>

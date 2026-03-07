@@ -1,0 +1,110 @@
+[
+    {
+        "merged": "com.miruai.app-debug-49:/layout_dialog_api_key.xml.flat",
+        "source": "com.miruai.app-main-51:/layout/dialog_api_key.xml"
+    },
+    {
+        "merged": "com.miruai.app-debug-49:/drawable_ic_arrow_right.xml.flat",
+        "source": "com.miruai.app-main-51:/drawable/ic_arrow_right.xml"
+    },
+    {
+        "merged": "com.miruai.app-debug-49:/drawable_ic_image_video.xml.flat",
+        "source": "com.miruai.app-main-51:/drawable/ic_image_video.xml"
+    },
+    {
+        "merged": "com.miruai.app-debug-49:/color_bottom_nav_color.xml.flat",
+        "source": "com.miruai.app-main-51:/color/bottom_nav_color.xml"
+    },
+    {
+        "merged": "com.miruai.app-debug-49:/drawable_ic_pause.xml.flat",
+        "source": "com.miruai.app-main-51:/drawable/ic_pause.xml"
+    },
+    {
+        "merged": "com.miruai.app-debug-49:/drawable_bg_play_button.xml.flat",
+        "source": "com.miruai.app-main-51:/drawable/bg_play_button.xml"
+    },
+    {
+        "merged": "com.miruai.app-debug-49:/drawable_bg_upload_area.xml.flat",
+        "source": "com.miruai.app-main-51:/drawable/bg_upload_area.xml"
+    },
+    {
+        "merged": "com.miruai.app-debug-49:/xml_file_paths.xml.flat",
+        "source": "com.miruai.app-main-51:/xml/file_paths.xml"
+    },
+    {
+        "merged": "com.miruai.app-debug-49:/layout_activity_video_preview.xml.flat",
+        "source": "com.miruai.app-main-51:/layout/activity_video_preview.xml"
+    },
+    {
+        "merged": "com.miruai.app-debug-49:/layout_activity_splash.xml.flat",
+        "source": "com.miruai.app-main-51:/layout/activity_splash.xml"
+    },
+    {
+        "merged": "com.miruai.app-debug-49:/drawable_ic_play.xml.flat",
+        "source": "com.miruai.app-main-51:/drawable/ic_play.xml"
+    },
+    {
+        "merged": "com.miruai.app-debug-49:/drawable_gradient_accent.xml.flat",
+        "source": "com.miruai.app-main-51:/drawable/gradient_accent.xml"
+    },
+    {
+        "merged": "com.miruai.app-debug-49:/layout_activity_main.xml.flat",
+        "source": "com.miruai.app-main-51:/layout/activity_main.xml"
+    },
+    {
+        "merged": "com.miruai.app-debug-49:/drawable_ic_home.xml.flat",
+        "source": "com.miruai.app-main-51:/drawable/ic_home.xml"
+    },
+    {
+        "merged": "com.miruai.app-debug-49:/menu_bottom_nav_menu.xml.flat",
+        "source": "com.miruai.app-main-51:/menu/bottom_nav_menu.xml"
+    },
+    {
+        "merged": "com.miruai.app-debug-49:/layout_fragment_text_to_video.xml.flat",
+        "source": "com.miruai.app-main-51:/layout/fragment_text_to_video.xml"
+    },
+    {
+        "merged": "com.miruai.app-debug-49:/drawable_bg_input_field.xml.flat",
+        "source": "com.miruai.app-main-51:/drawable/bg_input_field.xml"
+    },
+    {
+        "merged": "com.miruai.app-debug-49:/layout_fragment_image_to_video.xml.flat",
+        "source": "com.miruai.app-main-51:/layout/fragment_image_to_video.xml"
+    },
+    {
+        "merged": "com.miruai.app-debug-49:/navigation_nav_graph.xml.flat",
+        "source": "com.miruai.app-main-51:/navigation/nav_graph.xml"
+    },
+    {
+        "merged": "com.miruai.app-debug-49:/drawable_bg_card.xml.flat",
+        "source": "com.miruai.app-main-51:/drawable/bg_card.xml"
+    },
+    {
+        "merged": "com.miruai.app-debug-49:/drawable_gradient_primary.xml.flat",
+        "source": "com.miruai.app-main-51:/drawable/gradient_primary.xml"
+    },
+    {
+        "merged": "com.miruai.app-debug-49:/drawable_ic_back.xml.flat",
+        "source": "com.miruai.app-main-51:/drawable/ic_back.xml"
+    },
+    {
+        "merged": "com.miruai.app-debug-49:/drawable_ic_text_video.xml.flat",
+        "source": "com.miruai.app-main-51:/drawable/ic_text_video.xml"
+    },
+    {
+        "merged": "com.miruai.app-debug-49:/drawable_ic_replay.xml.flat",
+        "source": "com.miruai.app-main-51:/drawable/ic_replay.xml"
+    },
+    {
+        "merged": "com.miruai.app-debug-49:/drawable_ic_settings.xml.flat",
+        "source": "com.miruai.app-main-51:/drawable/ic_settings.xml"
+    },
+    {
+        "merged": "com.miruai.app-debug-49:/layout_fragment_home.xml.flat",
+        "source": "com.miruai.app-main-51:/layout/fragment_home.xml"
+    },
+    {
+        "merged": "com.miruai.app-debug-49:/layout_item_style.xml.flat",
+        "source": "com.miruai.app-main-51:/layout/item_style.xml"
+    }
+]

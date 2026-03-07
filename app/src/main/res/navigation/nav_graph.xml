@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.miruai.app.ui.home.HomeFragment"
+        android:label="Home" />
+
+    <fragment
+        android:id="@+id/nav_text_to_video"
+        android:name="com.miruai.app.ui.texttovideo.TextToVideoFragment"
+        android:label="Text to Video" />
+
+    <fragment
+        android:id="@+id/nav_image_to_video"
+        android:name="com.miruai.app.ui.imagetovideo.ImageToVideoFragment"
+        android:label="Image to Video" />
+
+</navigation>

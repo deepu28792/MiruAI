@@ -1,0 +1,34 @@
+[
+    {
+        "merged": "com.miruai.app-mergeDebugResources-48:/layout/fragment_image_to_video.xml",
+        "source": "com.miruai.app-main-51:/layout/fragment_image_to_video.xml"
+    },
+    {
+        "merged": "com.miruai.app-mergeDebugResources-48:/layout/activity_video_preview.xml",
+        "source": "com.miruai.app-main-51:/layout/activity_video_preview.xml"
+    },
+    {
+        "merged": "com.miruai.app-mergeDebugResources-48:/layout/activity_main.xml",
+        "source": "com.miruai.app-main-51:/layout/activity_main.xml"
+    },
+    {
+        "merged": "com.miruai.app-mergeDebugResources-48:/layout/fragment_text_to_video.xml",
+        "source": "com.miruai.app-main-51:/layout/fragment_text_to_video.xml"
+    },
+    {
+        "merged": "com.miruai.app-mergeDebugResources-48:/layout/dialog_api_key.xml",
+        "source": "com.miruai.app-main-51:/layout/dialog_api_key.xml"
+    },
+    {
+        "merged": "com.miruai.app-mergeDebugResources-48:/layout/fragment_home.xml",
+        "source": "com.miruai.app-main-51:/layout/fragment_home.xml"
+    },
+    {
+        "merged": "com.miruai.app-mergeDebugResources-48:/layout/item_style.xml",
+        "source": "com.miruai.app-main-51:/layout/item_style.xml"
+    },
+    {
+        "merged": "com.miruai.app-mergeDebugResources-48:/layout/activity_splash.xml",
+        "source": "com.miruai.app-main-51:/layout/activity_splash.xml"
+    }
+]
