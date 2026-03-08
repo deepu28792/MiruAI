@@ -12,6 +12,7 @@ interface StabilityAiApi {
     @POST("v2beta/image-to-video")
     suspend fun imageToVideo(
         @Header("Authorization") apiKey: String,
+        @Header("Accept") accept: String = "application/json",
         @Part image: MultipartBody.Part,
         @Part("seed") seed: RequestBody,
         @Part("cfg_scale") cfgScale: RequestBody,
@@ -26,14 +27,14 @@ interface StabilityAiApi {
     ): Response<ResponseBody>
 
     @Multipart
-    @POST("v2beta/stable-video-diffusion")
-    suspend fun textToVideo(
+    @POST("v2beta/stable-image/generate/sd3")
+    suspend fun textToImage(
         @Header("Authorization") apiKey: String,
+        @Header("Accept") accept: String = "application/json",
         @Part("prompt") prompt: RequestBody,
-        @Part("cfg_scale") cfgScale: RequestBody,
-        @Part("motion_bucket_id") motionBucketId: RequestBody,
-        @Part("seed") seed: RequestBody
-    ): Response<VideoGenerationResponse>
+        @Part("output_format") outputFormat: RequestBody,
+        @Part("aspect_ratio") aspectRatio: RequestBody
+    ): Response<TextToImageResponse>
 }
 
 data class VideoGenerationResponse(
@@ -41,8 +42,8 @@ data class VideoGenerationResponse(
     val status: String? = null
 )
 
-data class VideoResultResponse(
-    val status: String,
-    val video: String? = null,
-    val finish_reason: String? = null
+data class TextToImageResponse(
+    val image: String? = null,
+    val finish_reason: String? = null,
+    val seed: Long? = null
 )

@@ -3,8 +3,8 @@ package com.miruai.app.data
 import android.content.Context
 import android.graphics.Bitmap
 import android.net.Uri
+import android.util.Base64
 import com.miruai.app.data.api.RetrofitClient
-import com.miruai.app.data.api.VideoGenerationResponse
 import kotlinx.coroutines.delay
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
 import okhttp3.MultipartBody
@@ -30,27 +30,28 @@ class VideoRepository(private val context: Context) {
         return try {
             val fullPrompt = if (style != "Cinematic") "$prompt, $style style" else prompt
             val promptBody = fullPrompt.toRequestBody("text/plain".toMediaTypeOrNull())
-            val cfgScaleBody = "1.8".toRequestBody("text/plain".toMediaTypeOrNull())
-            val motionBucketBody = "127".toRequestBody("text/plain".toMediaTypeOrNull())
-            val seedBody = "0".toRequestBody("text/plain".toMediaTypeOrNull())
+            val outputFormatBody = "jpeg".toRequestBody("text/plain".toMediaTypeOrNull())
+            val aspectRatioBody = "16:9".toRequestBody("text/plain".toMediaTypeOrNull())
 
-            val response = api.textToVideo(
+            val response = api.textToImage(
                 apiKey = "Bearer $apiKey",
                 prompt = promptBody,
-                cfgScale = cfgScaleBody,
-                motionBucketId = motionBucketBody,
-                seed = seedBody
+                outputFormat = outputFormatBody,
+                aspectRatio = aspectRatioBody
             )
 
             if (response.isSuccessful) {
-                val generationId = response.body()?.id
-                if (generationId != null) {
-                    pollForResult(apiKey, generationId)
+                val imageBase64 = response.body()?.image
+                if (imageBase64 != null) {
+                    val imageBytes = Base64.decode(imageBase64, Base64.DEFAULT)
+                    val file = saveImageToCache(imageBytes, System.currentTimeMillis().toString())
+                    VideoResult.Success(file)
                 } else {
-                    VideoResult.Error("No generation ID received")
+                    VideoResult.Error("No image data received")
                 }
             } else {
-                VideoResult.Error("API Error: ${response.code()} - ${response.message()}")
+                val errorBody = response.errorBody()?.string()
+                VideoResult.Error("API Error ${response.code()}: $errorBody")
             }
         } catch (e: Exception) {
             VideoResult.Error(e.message ?: "Unknown error occurred")
@@ -64,7 +65,8 @@ class VideoRepository(private val context: Context) {
         motionPrompt: String?
     ): VideoResult {
         return try {
-            val bitmap = loadBitmapFromUri(imageUri) ?: return VideoResult.Error("Failed to load image")
+            val bitmap = loadBitmapFromUri(imageUri)
+                ?: return VideoResult.Error("Failed to load image")
             val imageBytes = bitmapToBytes(bitmap)
             val imageRequestBody = imageBytes.toRequestBody("image/jpeg".toMediaTypeOrNull())
             val imagePart = MultipartBody.Part.createFormData("image", "image.jpg", imageRequestBody)
@@ -90,7 +92,8 @@ class VideoRepository(private val context: Context) {
                     VideoResult.Error("No generation ID received")
                 }
             } else {
-                VideoResult.Error("API Error: ${response.code()} - ${response.message()}")
+                val errorBody = response.errorBody()?.string()
+                VideoResult.Error("API Error ${response.code()}: $errorBody")
             }
         } catch (e: Exception) {
             VideoResult.Error(e.message ?: "Unknown error occurred")
@@ -119,13 +122,8 @@ class VideoRepository(private val context: Context) {
                             return VideoResult.Success(file)
                         }
                     }
-                    resultResponse.code() == 202 -> {
-                        // Still processing
-                        continue
-                    }
-                    else -> {
-                        return VideoResult.Error("Error ${resultResponse.code()}: ${resultResponse.message()}")
-                    }
+                    resultResponse.code() == 202 -> continue
+                    else -> return VideoResult.Error("Error ${resultResponse.code()}: ${resultResponse.message()}")
                 }
             } catch (e: Exception) {
                 if (attempts >= maxAttempts) {
@@ -133,15 +131,19 @@ class VideoRepository(private val context: Context) {
                 }
             }
         }
-
         return VideoResult.Error("Generation timed out. Please try again.")
     }
 
+    private fun saveImageToCache(bytes: ByteArray, id: String): String {
+        val file = java.io.File(context.cacheDir, "miru_image_$id.jpg")
+        file.writeBytes(bytes)
+        return file.absolutePath
+    }
+
     private fun saveVideoToCache(bytes: ByteArray, id: String): String {
-        val cacheDir = context.cacheDir
-        val videoFile = java.io.File(cacheDir, "miru_video_$id.mp4")
-        videoFile.writeBytes(bytes)
-        return videoFile.absolutePath
+        val file = java.io.File(context.cacheDir, "miru_video_$id.mp4")
+        file.writeBytes(bytes)
+        return file.absolutePath
     }
 
     private fun loadBitmapFromUri(uri: Uri): Bitmap? {
@@ -149,14 +151,11 @@ class VideoRepository(private val context: Context) {
             context.contentResolver.openInputStream(uri)?.use { stream ->
                 android.graphics.BitmapFactory.decodeStream(stream)
             }
-        } catch (e: Exception) {
-            null
-        }
+        } catch (e: Exception) { null }
     }
 
     private fun bitmapToBytes(bitmap: Bitmap): ByteArray {
         val stream = ByteArrayOutputStream()
-        // Resize if too large
         val maxSize = 1024
         val resized = if (bitmap.width > maxSize || bitmap.height > maxSize) {
             val ratio = minOf(maxSize.toFloat() / bitmap.width, maxSize.toFloat() / bitmap.height)
