@@ -234,7 +234,6 @@
                     android:layout_height="100dp"
                     android:background="@drawable/bg_input_field"
                     android:hint="@string/itv_prompt_hint"
-                    android:hintTextColor="@color/text_hint"
                     android:textColor="@color/text_primary"
                     android:textSize="14sp"
                     android:padding="14dp"
